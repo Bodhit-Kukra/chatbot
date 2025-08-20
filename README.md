@@ -10,7 +10,7 @@ The core logic prevents the bot from replying to its own messages, ensuring a mo
 - Prerequisites
 - Installation & Configuration
 - Usage
-- ⚠️ Important Disclaimers
+- Important Disclaimers
 
 ## ✨ Key Features
 
@@ -51,16 +51,16 @@ The script operates in an infinite loop with the following workflow:
 
 ## 🚀 Installation & Configuration
 
-- Step 1: Clone or Download the Script
+- Step 1: Clone or Download the Script <br>
 Save the Python script to a local directory on your computer.
 
-- Step 2: Install Required Packages
+- Step 2: Install Required Packages <br>
 Open your terminal or command prompt and install the necessary Python libraries:
 
 > Bash <br>
 > pip install -r requirements.txt
 
-- Step 3: Create the Environment File
+- Step 3: Create the Environment File <br>
 In the same directory as your script, create a new file named .env.
 
 Add your Google API key to this file as follows:
@@ -68,17 +68,21 @@ Add your Google API key to this file as follows:
 > GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY_HERE"
 
 - Step 4: Calibrate PyAutoGUI Coordinates
+
 This is the most critical step. The script relies on hardcoded screen coordinates (x, y) to click and drag the mouse. These coordinates will be different for your screen resolution and window layout.
 
-- Find Your Coordinates: You can find the coordinates for various points on your screen by running a simple helper script (cursor.py). Move your mouse to a target location (e.g., the message box) to see its X and Y values in the terminal.
+    - Find Your Coordinates:  
+    You can find the coordinates for various points on your screen by running a simple helper script (cursor.py). Move your mouse to a target location (e.g., the message box) to see its X and Y values in the terminal.
 
-- Identify Key Locations: You need to find the coordinates for:
-    The starting point of the chat history text selection (moveTo).
-    The ending point of the chat history text selection (dragTo).
-    A click point to deselect the text after copying.
-    The click point for the message input box.
+    - Identify Key Locations:  
+    You need to find the coordinates for:
+        The starting point of the chat history text selection (moveTo).
+        The ending point of the chat history text selection (dragTo).
+        A click point to deselect the text after copying.
+        The click point for the message input box.
 
-- Update the Script: Replace the coordinate values in the pyautogui.click(), pyautogui.moveTo(), and pyautogui.dragTo() functions in the main while loop with your new, calibrated coordinates.
+    - Update the Script:  
+    Replace the coordinate values in the pyautogui.click(), pyautogui.moveTo(), and pyautogui.dragTo() functions in the main while loop with your new, calibrated coordinates.
 
 ## ▶️ Usage
 
