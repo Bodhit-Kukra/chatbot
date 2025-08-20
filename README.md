@@ -67,21 +67,20 @@ Add your Google API key to this file as follows:
 
 > GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY_HERE"
 
-- Step 4: Calibrate PyAutoGUI Coordinates
-
+- Step 4: Calibrate PyAutoGUI Coordinates <br>
 This is the most critical step. The script relies on hardcoded screen coordinates (x, y) to click and drag the mouse. These coordinates will be different for your screen resolution and window layout.
 
-    - Find Your Coordinates:  
+1. Find Your Coordinates: <br>
     You can find the coordinates for various points on your screen by running a simple helper script (cursor.py). Move your mouse to a target location (e.g., the message box) to see its X and Y values in the terminal.
 
-    - Identify Key Locations:  
+2. Identify Key Locations: <br> 
     You need to find the coordinates for:
-        The starting point of the chat history text selection (moveTo).
-        The ending point of the chat history text selection (dragTo).
-        A click point to deselect the text after copying.
-        The click point for the message input box.
+    - The starting point of the chat history text selection (moveTo).
+    - The ending point of the chat history text selection (dragTo).
+    - A click point to deselect the text after copying.
+    - The click point for the message input box.
 
-    - Update the Script:  
+3. Update the Script: <br>
     Replace the coordinate values in the pyautogui.click(), pyautogui.moveTo(), and pyautogui.dragTo() functions in the main while loop with your new, calibrated coordinates.
 
 ## ▶️ Usage
@@ -99,8 +98,11 @@ The script will now take control of your mouse to perform the automation. Do not
 
 ## ⚠️ Important Disclaimers
 
-- Extremely Fragile: This script relies on GUI automation, which is inherently brittle. Any update to the WhatsApp UI, change in your screen resolution, or movement of the application window will break the script and require you to recalibrate the coordinates.
+- Extremely Fragile: <br>
+    This script relies on GUI automation, which is inherently brittle. Any update to the WhatsApp UI, change in your screen resolution, or movement of the application window will break the script and require you to recalibrate the coordinates.
 
-- Failsafe Mechanism: To stop the script immediately, slam your mouse cursor into one of the four corners of the screen. This is a built-in safety feature of pyautogui that will raise an exception and stop the script.
+- Failsafe Mechanism: <br>
+    To stop the script immediately, slam your mouse cursor into one of the four corners of the screen. This is a built-in safety feature of pyautogui that will raise an exception and stop the script.
 
-- Use Responsibly: This is a proof-of-concept project. Automating user accounts may be against the terms of service for many applications. Use this script ethically and responsibly. The creator is not responsible for any misuse.
+- Use Responsibly: <br>
+    This is a proof-of-concept project. Automating user accounts may be against the terms of service for many applications. Use this script ethically and responsibly. The creator is not responsible for any misuse.
